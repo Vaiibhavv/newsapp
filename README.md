@@ -23,7 +23,7 @@ To get started with the project, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/Vaiibhavv/news-app.git
+   git clone https://github.com/Vaiibhavv/newsapp.git
 
 2. Install the dependencies
 cd news-app
