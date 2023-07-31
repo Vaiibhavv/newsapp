@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-export default class Navbar extends Component {
-  render() {
-    return (
-      <div>
-        <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-info py-0 ">
+import React from "react";
+import { Link,useLocation } from "react-router-dom";
+
+function Navbar() {
+  return (
+    <div>
+         <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-info py-0 ">
           <div className="container-fluid">
             <Link className="navbar-brand" to="/">
               NewsMela
@@ -26,37 +26,37 @@ export default class Navbar extends Component {
             >
               <ul className="navbar-nav me-auto mb-2 mb-lg-0 nav-item-active">
                 <li className="nav-item">
-                  <Link className="nav-link " aria-current="page" to="/">
+                  <Link className={`nav-link ${useLocation().pathname==='/'?"active":""}`} aria-current="page" to="/">
                     Home
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link font-weight-bold" to="/business">
+                  <Link className={`nav-link ${useLocation().pathname==='/business'?"active":""}`} to="/business">
                     Business
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/entertainment">
+                  <Link className={`nav-link ${useLocation().pathname==='/entertainment'?"active":""}`} to="/entertainment">
                     Entertainment
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/health">
+                  <Link className={`nav-link ${useLocation().pathname==='/health'?"active":""}`} to="/health">
                     Health
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/science">
+                  <Link className={`nav-link ${useLocation().pathname==='/science'?"active":""}`} to="/science">
                     Science
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/sports">
+                  <Link className={`nav-link ${useLocation().pathname==='/sports'?"active":""}`} to="/sports">
                     Sports
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/technology">
+                  <Link className={`nav-link ${useLocation().pathname==='/technology'?"active":""}`} to="/technology">
                     Technology
                   </Link>
                 </li>
@@ -64,7 +64,8 @@ export default class Navbar extends Component {
             </div>
           </div>
         </nav>
-      </div>
-    );
-  }
+    </div>
+  )
 }
+
+export default Navbar
